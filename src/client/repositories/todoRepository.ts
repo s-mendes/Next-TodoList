@@ -65,9 +65,42 @@ async function createByContent(content: string): Promise<Todo> {
   });
 }
 
+async function toggleDone(id: string): Promise<Todo> {
+  return fetch(`/api/todos/${id}/toggle-done`, {
+    method: "PUT",
+  }).then(async (serverResponse) => {
+    const responseString = await serverResponse.text();
+    const responseParsed = JSON.parse(responseString);
+
+    if (!serverResponse.ok) {
+      throw new Error(responseParsed.message);
+    }
+
+    const todoSchema = schema.object({
+      todo: TodoSchema,
+    });
+
+    const todoParsed = todoSchema.safeParse(responseParsed);
+
+    if (!todoParsed.success) {
+      throw new Error("Fail to toggle done");
+    }
+
+    const toggledTodo = todoParsed.data.todo;
+
+    return {
+      id: toggledTodo.id,
+      content: toggledTodo.content,
+      date: toggledTodo.date,
+      done: toggledTodo.done,
+    };
+  });
+}
+
 export const todoRepository = {
   get,
   createByContent,
+  toggleDone,
 };
 
 function parseTodosFromServer(responseBody: unknown): {

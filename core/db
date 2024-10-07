@@ -46,61 +46,61 @@
       "id": "f46bf302-bc7c-4cc8-8ad6-02cbca755741",
       "date": "2024-10-06T19:54:24.772Z",
       "content": "Aloooo",
-      "done": false
+      "done": true
     },
     {
       "id": "cfccbec4-269f-4ca6-a6d8-484d789d0511",
       "date": "2024-10-06T19:54:27.181Z",
       "content": "asdfasdfsadf",
-      "done": false
+      "done": true
     },
     {
       "id": "2d853887-860b-40ba-90fc-c5936e201e4c",
       "date": "2024-10-06T19:57:12.350Z",
       "content": "Correr",
-      "done": false
+      "done": true
     },
     {
       "id": "c09f73c9-0b4b-4072-adad-d0b648f02d77",
       "date": "2024-10-06T19:57:14.544Z",
       "content": "academia",
-      "done": false
+      "done": true
     },
     {
       "id": "630d1329-27de-40f2-88b5-29a5e036775f",
       "date": "2024-10-06T19:57:15.836Z",
       "content": "estudar",
-      "done": false
+      "done": true
     },
     {
       "id": "c103c7ea-091d-4e37-9058-d78e963ea508",
       "date": "2024-10-06T19:57:20.684Z",
       "content": "trabalhar",
-      "done": false
+      "done": true
     },
     {
       "id": "f9e4d3cb-f975-4c7d-85dd-098ffc6da6e7",
       "date": "2024-10-06T19:57:21.579Z",
       "content": "viajar",
-      "done": false
+      "done": true
     },
     {
       "id": "ec25980f-bf23-456a-b0be-25c80864580f",
       "date": "2024-10-06T19:57:23.707Z",
       "content": "tomar café",
-      "done": false
+      "done": true
     },
     {
       "id": "cdcac3db-daf8-467e-8651-a144c1e7291e",
       "date": "2024-10-06T19:57:25.256Z",
       "content": "tomar banho",
-      "done": false
+      "done": true
     },
     {
       "id": "8f18025d-442d-4bed-a475-6629781bfdce",
       "date": "2024-10-06T20:09:47.260Z",
       "content": "adsfasd",
-      "done": false
+      "done": true
     }
   ]
 }

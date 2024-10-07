@@ -8,6 +8,7 @@ const bg = "/bg.png";
 interface HomeTodo {
   id: string;
   content: string;
+  done: boolean;
 }
 
 export default function Page() {
@@ -106,10 +107,36 @@ export default function Page() {
             {homeTodos.map((todo) => (
               <tr key={todo.id}>
                 <td>
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    checked={todo.done}
+                    onChange={() => {
+                      todoController.toggleDone({
+                        id: todo.id,
+                        onSuccess() {
+                          // Do nothing
+                        },
+                        onError(customMessage: string) {
+                          alert(customMessage);
+                        },
+                        updateTodoOnScreen() {
+                          setTodos((currentTodos) => {
+                            return currentTodos.map((currentTodo) =>
+                              currentTodo.id === todo.id
+                                ? { ...currentTodo, done: !currentTodo.done }
+                                : currentTodo
+                            );
+                          });
+                        },
+                      });
+                    }}
+                  />
                 </td>
                 <td>{todo.id.substring(0, 4)}</td>
-                <td>{todo.content}</td>
+                <td>
+                  {!todo.done && todo.content}
+                  {todo.done && <s>{todo.content}</s>}
+                </td>
                 <td align="right">
                   <button data-type="delete">Apagar</button>
                 </td>
