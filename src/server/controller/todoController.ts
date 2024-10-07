@@ -84,7 +84,7 @@ async function toggleDone(req: NextRequest, id: string) {
 
   try {
     const updatedTodo = await todoRepository.toggleDone(id);
-    return new Response(JSON.stringify(updatedTodo), {
+    return new Response(JSON.stringify({ todo: updatedTodo }), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });
