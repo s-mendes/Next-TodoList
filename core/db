@@ -1,106 +1,52 @@
 {
   "todos": [
     {
-      "id": "5550a88a-50ca-448f-bbb0-c1480ee81f23",
-      "date": "2023-03-27T00:07:51.718Z",
-      "content": "Primeira TODO",
-      "done": true
-    },
-    {
-      "id": "ae800f92-2993-4278-9b1c-917da9c459b7",
-      "date": "2023-03-27T00:07:51.718Z",
-      "content": "Atualizada!",
-      "done": false
-    },
-    {
-      "id": "904990f4-26d2-4c11-89ba-42d89946649d",
-      "date": "2024-10-06T18:17:53.071Z",
-      "content": "Nova todo",
-      "done": false
-    },
-    {
-      "id": "9f243b01-32d5-4f4e-8e70-ec5b8aa2593d",
-      "date": "2024-10-06T18:24:58.819Z",
-      "content": "Nova todo",
-      "done": false
-    },
-    {
-      "id": "9d51908d-96b4-4c9e-85ae-85ad8b093ead",
-      "date": "2024-10-06T19:41:36.510Z",
-      "content": "Teste nova todo",
-      "done": false
-    },
-    {
-      "id": "a71addc4-3e3f-484c-a56d-61e38f78ffb5",
-      "date": "2024-10-06T19:54:18.946Z",
-      "content": "teste",
-      "done": false
-    },
-    {
-      "id": "f99dffed-078b-49bf-83a2-04ff666ebc5e",
-      "date": "2024-10-06T19:54:21.503Z",
-      "content": "asdfasdfasdf",
-      "done": false
-    },
-    {
-      "id": "f46bf302-bc7c-4cc8-8ad6-02cbca755741",
-      "date": "2024-10-06T19:54:24.772Z",
-      "content": "Aloooo",
-      "done": true
-    },
-    {
-      "id": "cfccbec4-269f-4ca6-a6d8-484d789d0511",
-      "date": "2024-10-06T19:54:27.181Z",
-      "content": "asdfasdfsadf",
-      "done": true
-    },
-    {
-      "id": "2d853887-860b-40ba-90fc-c5936e201e4c",
-      "date": "2024-10-06T19:57:12.350Z",
+      "id": "75403ff5-1623-41f1-b917-1887f0b8cdcb",
+      "date": "2024-10-09T20:59:33.803Z",
       "content": "Correr",
-      "done": true
+      "done": false
     },
     {
-      "id": "c09f73c9-0b4b-4072-adad-d0b648f02d77",
-      "date": "2024-10-06T19:57:14.544Z",
-      "content": "academia",
-      "done": true
+      "id": "5dd86db0-08ff-4fec-9294-2ccc2f87abec",
+      "date": "2024-10-09T20:59:38.240Z",
+      "content": "Andar",
+      "done": false
     },
     {
-      "id": "630d1329-27de-40f2-88b5-29a5e036775f",
-      "date": "2024-10-06T19:57:15.836Z",
-      "content": "estudar",
-      "done": true
+      "id": "2b4dd8eb-3f7d-4abe-a5a1-3175d65f7f9f",
+      "date": "2024-10-09T20:59:39.957Z",
+      "content": "acordar",
+      "done": false
     },
     {
-      "id": "c103c7ea-091d-4e37-9058-d78e963ea508",
-      "date": "2024-10-06T19:57:20.684Z",
-      "content": "trabalhar",
-      "done": true
+      "id": "379e2845-c01e-4274-81de-1af2edccc06c",
+      "date": "2024-10-09T20:59:47.940Z",
+      "content": "Tomar cafe",
+      "done": false
     },
     {
-      "id": "f9e4d3cb-f975-4c7d-85dd-098ffc6da6e7",
-      "date": "2024-10-06T19:57:21.579Z",
-      "content": "viajar",
-      "done": true
+      "id": "6f509135-04b8-41e8-b5bf-2318fd61b41c",
+      "date": "2024-10-09T20:59:51.916Z",
+      "content": "Tomar banho",
+      "done": false
     },
     {
-      "id": "ec25980f-bf23-456a-b0be-25c80864580f",
-      "date": "2024-10-06T19:57:23.707Z",
-      "content": "tomar café",
-      "done": true
+      "id": "31cf687a-6c91-4a14-a5a0-02551e2b7fcc",
+      "date": "2024-10-09T20:59:56.928Z",
+      "content": "Escovar os dentes",
+      "done": false
     },
     {
-      "id": "cdcac3db-daf8-467e-8651-a144c1e7291e",
-      "date": "2024-10-06T19:57:25.256Z",
-      "content": "tomar banho",
-      "done": true
+      "id": "c67908b8-4257-4913-aaf9-698902a67c09",
+      "date": "2024-10-09T21:17:16.739Z",
+      "content": "Criar um twitter novo de dev",
+      "done": false
     },
     {
-      "id": "8f18025d-442d-4bed-a475-6629781bfdce",
-      "date": "2024-10-06T20:09:47.260Z",
-      "content": "adsfasd",
-      "done": true
+      "id": "3d5fcc24-cba7-4ef4-91f8-5ef7eb893bc7",
+      "date": "2024-10-09T21:17:28.823Z",
+      "content": "Estudar CI/CD",
+      "done": false
     }
   ]
 }
