@@ -97,10 +97,23 @@ async function toggleDone(id: string): Promise<Todo> {
   });
 }
 
+async function deleteById(id: string): Promise<void> {
+  return fetch(`/api/todos/${id}`, {
+    method: "DELETE",
+  }).then(async (serverResponse) => {
+    if (!serverResponse.ok) {
+      const responseString = await serverResponse.text();
+      const responseParsed = JSON.parse(responseString);
+      throw new Error(responseParsed.message);
+    }
+  });
+}
+
 export const todoRepository = {
   get,
   createByContent,
   toggleDone,
+  deleteById,
 };
 
 function parseTodosFromServer(responseBody: unknown): {

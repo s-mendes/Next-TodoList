@@ -1,6 +1,7 @@
 import { todoRepository } from "@server/repository/todoRepository";
 import { NextRequest } from "next/server";
 import { z as schema } from "zod";
+import { NotFoundError } from "../infra/errors";
 
 async function get(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
@@ -98,8 +99,49 @@ async function toggleDone(req: NextRequest, id: string) {
   }
 }
 
+async function deleteById(req: NextRequest, id: string) {
+  const QuerySchema = schema.object({
+    id: schema.string().uuid().min(1),
+  });
+
+  const parsedId = QuerySchema.safeParse({ id });
+
+  if (!parsedId.success) {
+    return new Response(
+      JSON.stringify({
+        message: "Invalid request body",
+        descriptions: parsedId.error.issues,
+      }),
+      {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  }
+
+  try {
+    await todoRepository.deleteById(parsedId.data.id);
+    return new Response(null, {
+      status: 204,
+    });
+  } catch (error) {
+    if (error instanceof NotFoundError) {
+      return new Response(JSON.stringify({ message: error.message }), {
+        status: error.status,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
+    new Response(JSON.stringify({ message: "Internal server error." }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+}
+
 export const todoController = {
   get,
   create,
   toggleDone,
+  deleteById,
 };

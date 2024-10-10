@@ -1,4 +1,4 @@
-import { create, read, update } from "@crud-todo";
+import { create, deleteById as dbDeleteByID, read, update } from "@crud-todo";
 
 interface TodoRepositoryGetParams {
   page?: number;
@@ -51,10 +51,26 @@ async function toggleDone(id: string): Promise<Todo> {
   return updatedTodo;
 }
 
+async function deleteById(id: string): Promise<void> {
+  const ALL_TODOS = read();
+  const todo = ALL_TODOS.find((todo) => todo.id === id);
+
+  if (!todo) {
+    throw new Error(`Todo with id ${id} not found`);
+  }
+
+  try {
+    dbDeleteByID(id);
+  } catch (error) {
+    throw new Error(`Fail to delete recourd with id ${id}`);
+  }
+}
+
 export const todoRepository = {
   get,
   createByContent,
   toggleDone,
+  deleteById,
 };
 
 interface Todo {

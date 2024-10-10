@@ -138,7 +138,26 @@ export default function Page() {
                   {todo.done && <s>{todo.content}</s>}
                 </td>
                 <td align="right">
-                  <button data-type="delete">Apagar</button>
+                  <button
+                    data-type="delete"
+                    onClick={async () => {
+                      await todoController.deleteById({
+                        id: todo.id,
+                        onSuccess() {
+                          setTodos((currentTodos) => {
+                            return currentTodos.filter(
+                              (currentTodo) => currentTodo.id !== todo.id
+                            );
+                          });
+                        },
+                        onError(customMessage: string) {
+                          alert(customMessage);
+                        },
+                      });
+                    }}
+                  >
+                    Apagar
+                  </button>
                 </td>
               </tr>
             ))}
