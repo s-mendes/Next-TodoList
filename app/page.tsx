@@ -69,6 +69,7 @@ export default function Page() {
           }}
         >
           <input
+            name="add-todo"
             type="text"
             placeholder="Correr, Estudar..."
             value={newTodoContent}
