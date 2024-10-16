@@ -18,7 +18,7 @@ jobs:
         run: npm run lint
   test:
     runs-on: ubuntu-latest
-    container: cypress/browsers:node-20.11.1-chrome-115
+    container: cypress/browsers:node-18.12.0-chrome107
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
