@@ -16,7 +16,7 @@ async function get(req: NextRequest) {
     return new Response("Invalid limit number", { status: 400 });
   }
 
-  const output = todoRepository.get({
+  const output = await todoRepository.get({
     page: page !== null ? Number(page) : undefined,
     limit: limit !== null ? Number(limit) : undefined,
   });
@@ -64,16 +64,21 @@ async function create(req: NextRequest) {
     );
   }
 
-  const createdTodo = await todoRepository.createByContent(body.data.content);
-
-  const todo = {
-    todo: createdTodo,
-  };
-
-  return new Response(JSON.stringify(todo), {
-    status: 201,
-    headers: { "Content-Type": "application/json" },
-  });
+  try {
+    const createdTodo = await todoRepository.createByContent(body.data.content);
+    const todo = {
+      todo: createdTodo,
+    };
+    return new Response(JSON.stringify(todo), {
+      status: 201,
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (error) {
+    return new Response(JSON.stringify({ message: error.message }), {
+      status: 400,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
 }
 
 async function toggleDone(req: NextRequest, id: string) {

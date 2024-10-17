@@ -7,6 +7,6 @@ export async function PUT(
 ) {
   const id = params.id;
 
-  const output = todoController.toggleDone(req, id);
+  const output = await todoController.toggleDone(req, id);
   return output;
 }

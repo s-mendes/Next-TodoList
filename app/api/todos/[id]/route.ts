@@ -7,6 +7,6 @@ export async function DELETE(
 ) {
   const id = params.id;
 
-  const output = todoController.deleteById(req, id);
+  const output = await todoController.deleteById(req, id);
   return output;
 }
